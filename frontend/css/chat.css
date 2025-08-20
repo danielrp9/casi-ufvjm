@@ -1,0 +1,177 @@
+/* Estilos para o ícone flutuante */
+.chat-widget {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1000;
+}
+
+.chat-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #004d99;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.chat-icon:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.chat-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.chat-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos para o contêiner do chat */
+.chat-container {
+    width: 350px;
+    height: 500px;
+    background-color: #f8f8f8;
+    border-radius: 12px; /* Bordas arredondadas */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    bottom: 90px;
+    right: 2rem;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.chat-container.open {
+    display: flex; /* Exibe o contêiner e ativa o Flexbox */
+}
+
+.chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #004d99;
+    color: #fff;
+    padding: 1rem;
+    border-bottom: 1px solid #003366;
+    flex-shrink: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.chat-header .header-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.chat-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.chat-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.chat-header p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.close-chat {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* Estilos para o corpo do chat (rolagem das mensagens) */
+.chat-body {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    scroll-behavior: smooth;
+}
+
+.chat-message {
+    padding: 0.75rem;
+    border-radius: 8px;
+    max-width: 80%;
+}
+
+.bot-message {
+    background-color: #e0e0e0;
+    align-self: flex-start;
+}
+
+.user-message {
+    background-color: #004d99;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.whatsapp-btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #25D366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+/* Estilos para o input do chat (fixo na parte inferior) */
+.chat-input {
+    display: flex;
+    padding: 1rem;
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    flex-shrink: 0;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    border: 1px solid #ccc;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+.chat-input input::placeholder {
+    color: #999;
+}
+
+.chat-input button {
+    background: none;
+    border: none;
+    color: #004d99;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 0.5rem;
+    outline: none;
+}

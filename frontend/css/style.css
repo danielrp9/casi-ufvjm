@@ -1,0 +1,341 @@
+/* Importação e uso das fontes Mulish */
+body {
+    font-family: 'Mulish', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.lock-icon {
+    width: 28px;
+    height: 22px;
+}
+
+/* Estilos de título */
+h1, h2, h3 {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    color: #004d99;
+}
+
+/* Estilos para a logo */
+.logo-img {
+    max-height: 30px;
+}
+
+/* Estilos para o cabeçalho e navegação (Desktop) */
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #004d99;
+}
+
+.lock-icon-mobile {
+    display: none;
+}
+
+/* Estilos para o link de navegação ativo */
+.nav-item.active {
+    color: #004d99;
+    font-weight: 700;
+    border-bottom: 2px solid #004d99;
+    padding-bottom: 5px;
+}
+
+/* Garante que o hover em outros links não sobreponha o estilo do link ativo */
+.nav-item.active:hover {
+    color: #004d99;
+}
+
+/* Seção de herói (banner) */
+.hero-section {
+    color: #fff;
+    padding: 3rem 1rem;
+    border-radius: 12px;
+    margin: 0.1rem auto;
+    overflow: hidden;
+    position: relative;
+    max-width: 1200px;
+    height: 333px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para a imagem do banner */
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Estilo para escurecer a imagem e destacar o texto */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 12px;
+    z-index: 0;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    padding-left: 2rem;
+    /* Adiciona uma margem superior para empurrar o texto para baixo */
+    margin-top: 2rem; 
+}
+
+.hero-text h1 {
+    color: #fff;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin: 0.5rem 0 0;
+}
+
+.hero-text p {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+/* Estilos para o breadcrumb (caminho do usuário) */
+.breadcrumb-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem 0;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.breadcrumb-container a {
+    text-decoration: none;
+    color: #333;
+}
+
+.breadcrumb-container a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-container img {
+    height: 18px;
+    width: auto;
+}
+
+.breadcrumb-separator {
+    color: #999;
+}
+
+.breadcrumb-current {
+    font-weight: 700;
+}
+
+/* Estilos para o conteúdo principal (geral) */
+.main-content {
+    flex-grow: 1;
+}
+
+/* Estilos do Footer */
+.footer {
+    background-color: #222222;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Mulish', sans-serif;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #444;
+}
+
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.footer-column p, .footer-column ul, .footer-column li {
+    margin: 0.5rem 0;
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-item a:hover {
+    color: #fff;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+.developer-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.developer-info p {
+    font-size: 0.8rem;
+    color: #ccc;
+    margin: 0;
+}
+
+.developer-social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.developer-social-icons a {
+    color: #ccc;
+    font-size: 18px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.developer-social-icons a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.social-icons a:hover {
+    color: #004d99;
+    transform: scale(1.1);
+}
+
+.footer-icon {
+    font-size: 16px;
+    color: #ccc;
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .nav {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .nav-item {
+        margin-left: 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+    
+    .footer-bottom p {
+        align-items: center;
+    }
+
+    .developer-info {
+        flex-direction: column;
+        text-align: center;
+    }
+}

@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - Portal do CASI</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="header-content">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'assets/img/logo.png' %}" alt="Logo do CASI" class="logo-img">
+            </a>
+            <nav class="nav">
+                <a href="{% url 'home' %}" class="nav-item">Início</a>
+                <a href="{% url 'news_list' %}" class="nav-item">Notícias</a>
+                <a href="{% url 'about' %}" class="nav-item {% if request.resolver_match.url_name == 'about' %}active{% endif %}">Sobre Nós</a>
+                <a href="{% url 'events_list' %}" class="nav-item">Eventos</a>
+                <a href="{% url 'research_groups_list' %}" class="nav-item">Grupos de Pesquisa</a>
+                <a href="{% url 'documents_list' %}" class="nav-item">Documentos</a>
+                <a href="{% url 'diretoria_list' %}" class="nav-item">Diretoria do CA</a>
+                <a href="/admin/" class="nav-item"><img src="{% static 'assets/img/lock-icon.png' %}" alt="Login" class="lock-icon"></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <nav class="breadcrumb-container">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'assets/img/home.png' %}" alt="Home">
+            </a>
+            <span class="breadcrumb-separator">></span>
+            <span class="breadcrumb-current">Sobre Nós</span>
+        </nav>
+
+        <section class="about-section">
+            <div class="about-header-container">
+                <h2 class="page-title">Sobre Nós</h2>
+            </div>
+            
+            <div class="founder-info">
+                <img src="{% static 'assets/owner/daniel-rodrigues.jpeg' %}" alt="Foto do fundador" class="founder-photo">
+                <div class="founder-text-content">
+                    <p>
+                        O <strong>Centro Acadêmico de Sistemas de Informação (CASI)</strong> foi fundado e <strong>oficializado em 28 de novembro de 2023</strong>, a partir da percepção da ausência de uma entidade que representasse, de forma legítima e ativa, os interesses, direitos e necessidades dos estudantes do curso de Sistemas de Informação da UFVJM. Naquele período, o Diretório Central dos Estudantes (DCE) atravessava uma gestão ilegítima, marcada pela falta de representatividade e atuação efetiva, o que reforçou a urgência de uma organização própria que garantisse voz e participação estudantil.
+                    </p>
+                    <p>
+                        A iniciativa de fundação foi liderada por <strong>Daniel Rodrigues Pereira</strong>, discente de Sistemas de Informação, que se tornou o primeiro presidente do CASI, responsável por estruturar a entidade e consolidar sua oficialização perante a universidade.
+                    </p>
+                    <p>
+                        A criação do CASI surgiu, portanto, do desejo coletivo de estabelecer um espaço autônomo, democrático e transparente, capaz de fortalecer a identidade do curso, ampliar o diálogo com a universidade e construir pontes entre estudantes, professores e gestão acadêmica. Mais do que um órgão representativo, o Centro Acadêmico se constitui como instrumento de mobilização, integração e desenvolvimento estudantil, buscando promover atividades acadêmicas, culturais, científicas e sociais que contribuam para a formação crítica e cidadã dos seus membros.
+                    </p>
+                    <p>
+                        O impacto da fundação do CASI vai além da representatividade formal: ele se reflete no fortalecimento da comunidade acadêmica, na defesa de melhores condições de ensino, pesquisa e extensão, e na construção de uma memória institucional que assegura continuidade e identidade para as próximas gerações de estudantes.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="historico-section">
+            <div class="historico-title-container">
+                <h2>Histórico de Gestões</h2>
+            </div>
+            <div class="historico-list">
+                </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Sobre o CASI</h3>
+                <p>O Centro Acadêmico de Sistemas de Informação representa os estudantes do curso de Sistemas de Informação da UFVJM, defendendo seus direitos e promovendo atividades acadêmicas e culturais.</p>
+                           <div class="copyright">
+                <p>© 2025 CASI UFVJM. Todos os direitos reservados.</p>
+            </div>
+            </div>
+            <div class="footer-column">
+                <h3>Links Rápidos</h3>
+                <ul>
+                    <li><a href="#">Nossa Chapa</a></li>
+                    <li><a href="#">Financeiro</a></li>
+                    <li><a href="{% url 'documents_list' %}">Editais e Documentos</a></li>
+                    <li><a href="{% url 'events_list' %}">Eventos</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contato</h3>
+                <p class="contact-item"><a href="mailto:casi@ufvjm.edu.br"><i class="fas fa-envelope footer-icon"></i> casi@ufvjm.edu.br</a></p>
+                <p class="contact-item"><a href="https://maps.google.com/?cid=2921342388906897848&g_mp=Cidnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLlNlYXJjaFRleHQ" target="_blank"><i class="fas fa-map-marker-alt footer-icon"></i> Campus JK, Diamantina/MG</a></p>
+                <p class="contact-item"><a href="https://www.instagram.com/casi.ufvjm/" target="_blank"><i class="fab fa-instagram footer-icon"></i> @casi.ufvjm</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+ 
+            <div class="developer-info">
+                <p>Desenvolvido por: Daniel Rodrigues Pereira - Discente de Sistemas de Informação</p>
+                <div class="developer-social-icons">
+                    <a href="https://www.linkedin.com/in/daniel-rodrigues-pereira-29b1b7243/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/danielrp9" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/daniel_rodrigues9/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+        <div id="data-urls" data-arrow-icon-url="{% static 'assets/img/arrow.png' %}" data-chevron-icon-url="{% static 'assets/img/arrow.png' %}"></div>
+
+    <script src="{% static 'js/about.js' %}"></script>
+</body>
+</html>

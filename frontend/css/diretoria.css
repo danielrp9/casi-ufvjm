@@ -1,0 +1,101 @@
+.diretoria-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+.diretoria-section h2 {
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.section-description {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.diretoria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 2rem; /* Adiciona padding para alinhar com a logo e o cadeado */
+}
+
+.diretoria-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s ease;
+}
+
+.diretoria-item:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.diretoria-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    cursor: pointer;
+}
+
+.diretoria-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.chevron-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.chevron-icon.expanded {
+    transform: rotate(90deg);
+}
+
+.diretoria-members {
+    display: none;
+    padding: 1rem 1.5rem 1.5rem 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.members-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 150px;
+}
+
+.member-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.5rem;
+}
+
+.member-card h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.member-card p {
+    margin: 0;
+    font-size: 0.8rem;
+    color: #666;
+}
