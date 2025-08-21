@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else if (currentStep === 1) {
             if (response.toLowerCase() === 'sim' || response.toLowerCase() === 's') {
                 setTimeout(() => {
-                    const whatsappLink = `https://chat.whatsapp.com/HXqCudUbttp76sbidgJb04`;
+                    const whatsappLink = `https://chat.whatsapp.com/CGE821ng7PKJJXzu407muY`;
                     addMessageAndScroll(`
                         Ótimo! Clique no botão abaixo para entrar no nosso grupo com representantes do Centro Acadêmico:
                         <a href="${whatsappLink}" class="whatsapp-btn" target="_blank">

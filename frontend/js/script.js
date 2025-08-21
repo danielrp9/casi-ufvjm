@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const faqs = [
             {
                 question: 'O que é um Centro Acadêmico?',
-                answer: 'Um Centro Acadêmico (CA) é a entidade que representa os estudantes de um determinado curso, defendendo seus interesses e promovendo atividades acadêmicas e culturais.'
+                answer: 'Um Centro Acadêmico (CA) é a entidade que representa os estudantes de um determinado curso, defendendo seus direitos e interesses estudantis, além de promover atividades acadêmicas e culturais.'
             },
             {
                 question: 'O que o Centro Acadêmico pode fazer?',
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             {
                 question: 'Como fazer parte do Centro Acadêmico?',
-                answer: 'Normalmente, a participação se dá através de eleição. Os estudantes se candidatam em chapas para os cargos de diretoria.'
+                answer: 'A participação se dá através de eleição anual, onde os estudantes se candidatam em chapas para os cargos de diretoria.'
             },
             {
                 question: 'Quais os requisitos para fazer parte do Centro Acadêmico?',
