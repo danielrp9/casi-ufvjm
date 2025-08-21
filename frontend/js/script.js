@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchBanner = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/banners/');
+            const response = await fetch('/api/banners/');
+            //const response = await fetch('http://127.0.0.1:8000/api/banners/');
             const banners = await response.json();
             const bannerContainer = document.getElementById('banner-image-container');
 

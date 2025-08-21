@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchDocuments = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/documents/');
+           // const response = await fetch('http://127.0.0.1:8000/api/documents/');
+            const response = await fetch('/api/documents/');
+
             const documents = await response.json();
             const documentsList = document.querySelector('.documents-list');
             

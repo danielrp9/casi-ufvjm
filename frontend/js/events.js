@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fetchEvents = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/events/');
+          //  const response = await fetch('http://127.0.0.1:8000/api/events/');
+            const response = await fetch('/api/events/');
+
             const events = await response.json();
             const eventsList = document.querySelector('.events-list');
 

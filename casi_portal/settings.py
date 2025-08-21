@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ff6x96i%(*=-!w*r9c73t750kbcx_&bxr0%fuu!19!y)_@xmh2'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
+ALLOWED_HOSTS = ['danielrp9.pythonanywhere.com']
 
-ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -134,9 +134,15 @@ USE_TZ = True    # Usa timezone-aware datetimes
 STATIC_URL = 'static/'
 
 # Adiciona o diretório do front-end como diretório de arquivos estáticos
+#STATICFILES_DIRS = [
+#    BASE_DIR / 'frontend',
+#]#
+
+
 STATICFILES_DIRS = [
-    BASE_DIR / 'frontend',
+    BASE_DIR / 'frontend',  # continua servindo seus arquivos de front
 ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # pasta onde o collectstatic vai jogar tudo
 
 # Configuração para upload de arquivos
 MEDIA_URL = '/media/'
@@ -156,3 +162,8 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
     },
 }
+
+SECURE_BROWSER_XSS_FILTER = True
+SECURE_CONTENT_TYPE_NOSNIFF = True
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True

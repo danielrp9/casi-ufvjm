@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fetchHistorico = async () => {
         try {
-            const response = await fetch('http://127.0.0.1:8000/api/gestoes-historicas/');
+           // const response = await fetch('http://127.0.0.1:8000/api/gestoes-historicas/');
+            const response = await fetch('/api/gestoes-historicas/');
             const gestoes = await response.json();
             const historicoList = document.querySelector('.historico-list');
             const chevronIconUrl = document.getElementById('data-urls').dataset.chevronIconUrl; // Lê a URL do ícone do HTML
