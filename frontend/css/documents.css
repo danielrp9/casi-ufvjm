@@ -1,13 +1,163 @@
+/* Estilos globais e de layout para a página de documentos */
+body {
+    font-family: 'Mulish', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+}
+
+.header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-item {
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #004d99;
+}
+
+.lock-icon-mobile {
+    display: none;
+}
+
+.footer {
+    background-color: #212121;
+    color: #fff;
+    padding: 2rem;
+    font-family: 'Mulish', sans-serif;
+    margin-top: auto;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #444;
+}
+
+.footer-column h3 {
+    color: #fff;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.footer-column p, .footer-column ul, .footer-column li {
+    margin: 0.5rem 0;
+    color: #ccc;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column a {
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #fff;
+}
+
+.footer-column p img {
+    height: 16px;
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 1rem auto 0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer-copyright {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0.25rem;
+}
+
+.footer-copyright p {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.social-icons-bottom {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons-bottom .br-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+}
+
+.social-icons-bottom a:hover .br-icon {
+    transform: scale(1.1);
+}
+
+.lock-icon {
+    width: 28px;
+    height: 22px;
+}
+
+.logo-img {
+    max-height: 30px;
+}
+
+/* Estilos específicos da página de documentos */
 .documents-section {
     max-width: 1200px;
     margin: 2rem auto;
     padding: 2rem;
+    display: flex;
+    flex-direction: column;
 }
 
-/* NOVO: Estilos para o container do título, alinhado com a página de eventos */
 .documents-title-container {
-    max-width: 1200px;
-    margin: 2rem auto;
+    margin: 1rem auto;
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
 }
@@ -18,7 +168,36 @@
     padding: 1rem 0;
     margin: 0;
 }
-/* FIM DA CORREÇÃO DO TÍTULO */
+
+.specific-documents {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.document-button {
+    background-color: #004d99;
+    color: #fff;
+    padding: 1rem 1rem;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.document-button:hover {
+    background-color: #003366;
+}
+
+.document-button i {
+    margin-right: 0.5rem;
+}
 
 .section-description {
     text-align: center;
@@ -106,3 +285,14 @@
 .download-button:hover {
     background-color: #003366;
 }
+
+.specific-documents {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente (opcional) */
+    gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap; /* Permite quebra de linha em telas menores */
+}
+

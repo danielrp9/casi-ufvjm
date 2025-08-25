@@ -10,7 +10,7 @@ class DiretoriaCargo(models.Model):
     class Meta:
         verbose_name = "Cargo da Diretoria"
         verbose_name_plural = "Cargos da Diretoria"
-        ordering = ['name']
+        ordering = ['name'] # Mantém a ordem alfabética para os cargos
 
 class Member(models.Model):
     cargo = models.ForeignKey(DiretoriaCargo, on_delete=models.CASCADE, related_name='members', null=True)
@@ -25,7 +25,7 @@ class Member(models.Model):
     class Meta:
         verbose_name = "Membro da Diretoria"
         verbose_name_plural = "Membros da Diretoria"
-        ordering = ['role']
+        ordering = ['role'] # Mantém a ordem alfabética por função
 
 class ResearchGroup(models.Model):
     name = models.CharField(max_length=200)
@@ -61,7 +61,7 @@ class GestaoHistorico(models.Model):
     class Meta:
         verbose_name = "Gestão Histórica"
         verbose_name_plural = "Gestões Históricas"
-        ordering = ['-mandato']
+        ordering = ['-mandato'] # Ordena os mais recentes primeiro
 
 class MembroHistorico(models.Model):
     gestao = models.ForeignKey(GestaoHistorico, on_delete=models.CASCADE, related_name='membros')
@@ -75,3 +75,4 @@ class MembroHistorico(models.Model):
     class Meta:
         verbose_name = "Membro Histórico"
         verbose_name_plural = "Membros Históricos"
+        ordering = ['name'] # Mantém a ordem alfabética para os membros

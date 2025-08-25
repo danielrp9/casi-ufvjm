@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fetchAllNews = async () => {
         try {
-           // const response = await fetch('http://127.0.0.1:8000/api/news/');
-            const response = await fetch('/api/news/');
-
+            // A linha abaixo foi corrigida para usar API_BASE_URL
+            const response = await fetch(`${API_BASE_URL}/news/`);
             const news = await response.json();
             const newsList = document.querySelector('.news-full-list');
             

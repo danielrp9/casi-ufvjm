@@ -35,9 +35,11 @@
     </header>
 
     <main class="main-content">
-        <section class="hero-section fade-in">
+        <section class="hero-section">
             <div id="banner-image-container" class="hero-image-container">
+                {% if banner %}
                 <img src="{{ banner.image.url }}" alt="Banner do CASI" class="hero-image">
+                {% endif %}
             </div>
             <div class="hero-text">
                 <p>Seja bem-vindo ao</p>
@@ -46,28 +48,56 @@
                     Sistemas de Informação
                 </h1>
             </div>
-        </section> 
+        </section>
 
         <div class="content-section">
-            <section class="news-container fade-in">
+            <section class="news-container">
                 <h2>Últimas Notícias</h2>
-                <div class="news-list"></div>
+                <div class="news-list">
+                    {% for item in news %}
+                    <div class="news-item">
+                        <div class="news-image">
+                            <img src="{{ item.image.url }}" alt="{{ item.title }}">
+                        </div>
+                        <div class="news-content">
+                            <h3>{{ item.title }}</h3>
+                            <div>{{ item.content|safe|truncatechars:200 }}...</div>
+                        </div>
+                        <a href="{% url 'news_detail' item.id %}" class="read-more">
+                            <img src="{% static 'assets/img/icon_arrow.png' %}" alt="Ler mais">
+                        </a>
+                    </div>
+                    {% empty %}
+                    <p>Nenhuma notícia encontrada.</p>
+                    {% endfor %}
+                </div>
             </section>
             
-            <section class="faq-container fade-in">
+            <section class="faq-container">
                 <h2>Perguntas Frequentes</h2>
                 <div class="faq-list"></div>
             </section>
         </div>
 
-        <section class="entities-section fade-in">
+        <section class="entities-section">
             <h2>Conheça as Entidades Discentes do Departamento</h2>
-            <div class="entities-list"></div>
+            <div class="entities-list">
+                {% for entity in entities %}
+                <div class="entity-item">
+                    <div class="logo-wrapper">
+                        <img src="{{ entity.logo.url }}" alt="{{ entity.name }}">
+                    </div>
+                    <p>{{ entity.name }}</p>
+                </div>
+                {% empty %}
+                <p>Nenhuma entidade encontrada.</p>
+                {% endfor %}
+            </div>
         </section>
 
     </main>
 
-    <footer class="footer">
+     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Sobre o CASI</h3>
@@ -104,10 +134,9 @@
 
         </div>
     </footer>
-    
-    <div id="data-urls" data-arrow-icon-url="{% static 'assets/img/icon_arrow.png' %}" data-chevron-icon-url="{% static 'assets/img/arrow.png' %}"></div>
-    <div id="data-chevron-icon-url" data-chevron-icon-url="{% static 'assets/img/chevron-right.png' %}"></div>
 
+    <div id="data-urls" data-arrow-icon-url="{% static 'assets/img/arrow.png' %}" data-chevron-icon-url="{% static 'assets/img/chevron-right.png' %}"></div>
+    
     <div class="chat-widget">
         <div class="chat-icon" id="chatIcon">
             <div class="chat-avatar">
@@ -138,8 +167,8 @@
         </div>
     </div>
 
+    <script src="{% static 'js/config.js' %}"></script>
     <script src="{% static 'js/chat.js' %}"></script>
     <script src="{% static 'js/script.js' %}"></script>
-    <script src="{% static 'js/scroll-animations.js' %}"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fetchHistorico = async () => {
         try {
-           // const response = await fetch('http://127.0.0.1:8000/api/gestoes-historicas/');
-            const response = await fetch('/api/gestoes-historicas/');
+            // A linha abaixo foi corrigida para usar API_BASE_URL
+            const response = await fetch(`${API_BASE_URL}/gestoes-historicas/`);
             const gestoes = await response.json();
             const historicoList = document.querySelector('.historico-list');
-            const chevronIconUrl = document.getElementById('data-urls').dataset.chevronIconUrl; // Lê a URL do ícone do HTML
+            const chevronIconUrl = document.getElementById('data-urls').dataset.chevronIconUrl;
 
             if (gestoes.length === 0) {
                 historicoList.innerHTML = '<p>Nenhuma gestão histórica encontrada.</p>';

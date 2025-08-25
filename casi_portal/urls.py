@@ -3,7 +3,7 @@ from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from users.views import CustomUserViewSet
 from portal.views import NewsViewSet, EventViewSet, news_list_view, news_detail_view, events_list_view, BannerViewSet
-from docs.views import DocumentViewSet, documents_list_view
+from docs.views import DocumentViewSet, documents_list_view, RegimentoInternoViewSet, EstatutoViewSet
 from team.views import MemberViewSet, ResearchGroupViewSet, StudentEntityViewSet, home_view, research_groups_list_view, DiretoriaCargoViewSet, diretoria_list_view, GestaoHistoricoViewSet, about_view
 
 from django.conf import settings
@@ -14,6 +14,8 @@ router.register(r'users', CustomUserViewSet)
 router.register(r'news', NewsViewSet)
 router.register(r'events', EventViewSet)
 router.register(r'documents', DocumentViewSet)
+router.register(r'regimento', RegimentoInternoViewSet)
+router.register(r'estatuto', EstatutoViewSet)
 router.register(r'diretoria-cargos', DiretoriaCargoViewSet)
 router.register(r'gestoes-historicas', GestaoHistoricoViewSet)
 router.register(r'members', MemberViewSet)

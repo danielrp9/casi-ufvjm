@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchDiretoria = async () => {
         try {
-            //const response = await fetch('http://127.0.0.1:8000/api/diretoria-cargos/');
-            const response = await fetch('/api/diretoria-cargos/');
-
+            // Removido o '/api' duplicado da URL
+            const response = await fetch(`${API_BASE_URL}/diretoria-cargos/`);
             const diretorias = await response.json();
             const diretoriasList = document.querySelector('.diretoria-list');
 

@@ -1,15 +1,16 @@
 from rest_framework import viewsets
 from django.shortcuts import render
-
-from portal.models import Banner
 from .models import Member, ResearchGroup, StudentEntity, DiretoriaCargo, GestaoHistorico
+from portal.models import Banner, News
 from .serializers import MemberSerializer, ResearchGroupSerializer, StudentEntitySerializer, DiretoriaCargoSerializer, GestaoHistoricoSerializer
 
 def home_view(request):
     entities = StudentEntity.objects.all()
-    banner = Banner.objects.last() # Pega o banner mais recente
+    news = News.objects.all().order_by('-publication_date')[:3]
+    banner = Banner.objects.last()
     context = {
         'entities': entities,
+        'news': news,
         'banner': banner,
     }
     return render(request, 'index.html', context)

@@ -3,9 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const fetchDocuments = async () => {
         try {
-           // const response = await fetch('http://127.0.0.1:8000/api/documents/');
-            const response = await fetch('/api/documents/');
-
+            // A linha abaixo foi corrigida para usar API_BASE_URL
+            const response = await fetch(`${API_BASE_URL}/documents/`);
             const documents = await response.json();
             const documentsList = document.querySelector('.documents-list');
             

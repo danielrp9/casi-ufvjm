@@ -1,9 +1,10 @@
+// events.js
+
 document.addEventListener('DOMContentLoaded', () => {
     const fetchEvents = async () => {
         try {
-          //  const response = await fetch('http://127.0.0.1:8000/api/events/');
-            const response = await fetch('/api/events/');
-
+            // A linha abaixo foi corrigida para usar API_BASE_URL
+            const response = await fetch(`${API_BASE_URL}/events/`);
             const events = await response.json();
             const eventsList = document.querySelector('.events-list');
 

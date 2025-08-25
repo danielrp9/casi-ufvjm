@@ -1,9 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const fetchResearchGroups = async () => {
         try {
-            //const response = await fetch('http://127.0.0.1:8000/api/research-groups/');
-            const response = await fetch('/api/research-groups/');
-
+            const response = await fetch(`${API_BASE_URL}/research-groups/`);
             const groups = await response.json();
             const groupsList = document.querySelector('.research-groups-list');
             

@@ -5,14 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentos - Portal do CASI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/documents.css' %}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
 
@@ -43,32 +41,38 @@
             <span class="breadcrumb-current">Documentos</span>
         </nav>
 
-<section class="documents-section">
-    <div class="documents-title-container">
-        <h2>Documentos</h2>
-    </div>
-    <p class="section-description">
-        Aqui você encontra todos os documentos e editais importantes do departamento.
-    </p>
-    <div class="documents-list">
-        </div>
-</section>
+        <section class="documents-section">
+            <div class="documents-title-container">
+                <h2>Documentos</h2>
+            </div>
+            
+            <div class="specific-documents" style="text-align: center;">
+                {% if regimento %}
+                <a href="{{ regimento.file.url }}" style="text-decoration: none; color: white; background-color: #2a61a6; padding: 12px 24px; border-radius: 8px; font-weight: bold; display: inline-block; margin: 5px;">Regimento Interno do CASI</a>
+                {% endif %}
+                {% if estatuto %}
+                <a href="{{ estatuto.file.url }}" style="text-decoration: none; color: white; background-color: #2a61a6; padding: 12px 24px; border-radius: 8px; font-weight: bold; display: inline-block; margin: 5px;">Estatuto do CASI</a>
+                {% endif %}
+            </div>
+
+            <p class="section-description">
+                Aqui você encontra todos os documentos e editais importantes do departamento.
+            </p>
+            <div class="documents-list">
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
+     <footer class="footer">
         <div class="footer-content">
             <div class="footer-column">
                 <h3>Sobre o CASI</h3>
                 <p>O Centro Acadêmico de Sistemas de Informação representa os estudantes do curso de Sistemas de Informação da UFVJM, defendendo seus direitos e promovendo atividades acadêmicas e culturais.</p>
-                           <div class="copyright">
-                <p>© 2025 CASI UFVJM. Todos os direitos reservados.</p>
-            </div>
             </div>
             <div class="footer-column">
                 <h3>Links Rápidos</h3>
                 <ul>
-                    <li><a href="#">Nossa Chapa</a></li>
-                    <li><a href="#">Financeiro</a></li>
+                    <li><a href="{% url 'diretoria_list' %}">Diretoria</a></li>
                     <li><a href="{% url 'documents_list' %}">Editais e Documentos</a></li>
                     <li><a href="{% url 'events_list' %}">Eventos</a></li>
                 </ul>
@@ -95,7 +99,7 @@
     </footer>
 
     <div id="data-urls" data-chevron-icon-url="{% static 'assets/img/arrow.png' %}"></div>
-    
+    <script src="{% static 'js/config.js' %}"></script>
     <script src="{% static 'js/documents.js' %}"></script>
 </body>
 </html>
