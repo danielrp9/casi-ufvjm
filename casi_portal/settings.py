@@ -25,7 +25,9 @@ SECRET_KEY = 'django-insecure-ff6x96i%(*=-!w*r9c73t750kbcx_&bxr0%fuu!19!y)_@xmh2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['danielrp9.pythonanywhere.com']
+
 
 
 # Application definition
@@ -134,9 +136,11 @@ USE_TZ = True    # Usa timezone-aware datetimes
 STATIC_URL = 'static/'
 
 # Adiciona o diretório do front-end como diretório de arquivos estáticos
-STATICFILES_DIRS = [
-    BASE_DIR / 'frontend',
-]
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'frontend']  # seu frontend
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
 
 # Configuração para upload de arquivos
 MEDIA_URL = '/media/'
